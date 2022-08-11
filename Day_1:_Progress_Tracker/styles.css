@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital@0;1&family=Comfortaa:wght@400;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: "Albert Sans", sans-serif;
+  min-height: 100vh;
+  font-size: large;
+  background-color: rgb(52, 52, 52);
+  padding: 4rem;
+}
+
+header {
+  font-family: "Comfortaa", Helvetica, Arial;
+  font-weight: 700;
+  font-size: larger;
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  min-width: 30rem;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list_element {
+  list-style: none;
+  width: 60%;
+  min-width: 36rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.css-checkbox,
+.user_entry {
+  border-top: 3px solid rgb(205, 205, 205);
+  border-left: 3px solid rgb(187, 187, 187);
+  border-bottom: 4px solid rgb(156, 156, 156);
+  border-right: 4px solid rgb(166, 166, 166);
+}
+
+.list_box {
+  background-color: rgba(246, 246, 246, 0.678);
+  width: 90%;
+  min-width: 30rem;
+  min-height: 4rem;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.user_entry {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  min-height: 4rem;
+  width: 100%;
+  font-size: 24px;
+  color: rgba(43, 43, 43);
+}
+
+.button_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(119, 119, 119);
+  height: 14px;
+  width: 14px;
+  border-radius: 4px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#new_element_btn:hover {
+  color: rgb(10, 197, 0);
+}
+
+#delete_element_btn:hover {
+  color: rgb(197, 0, 0);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background-color: rgba(137, 137, 137, 0.2);
+}

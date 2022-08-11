@@ -1,0 +1,16 @@
+// {
+//   "window.zoomLevel": 1,
+//   "editor.fontSize": 24,
+//   // Controls if quick suggestions should show up while typing
+//   "editor.quickSuggestions": {
+//     "other": false,
+//     "comments": false,
+//     "strings": false
+//   },
+//   "cSpell.enabled": false,
+//   "editor.cursorStyle": "underline",
+//   "editor.cursorBlinking": "solid",
+//   "editor.foldingHighlight": false,
+//   "editor.occurrencesHighlight": false,
+//   "editor.renderLineHighlight": "none"
+// }
