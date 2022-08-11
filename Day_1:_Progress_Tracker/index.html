@@ -17,17 +17,17 @@
   </head>
   <body>
     <header><h1>Progress Tracker</h1></header>
-    <ul class="list_section" id="list_section">
-      <li class="list_element">
+    <div class="list_section" id="list_section">
+      <div class="list_element" id="element_0">
         <input
-          id="checkbox_1"
+          id="checkbox_0"
           class="css-checkbox"
           type="checkbox"
           name="entry_1"
         />
         <label
-          for="checkbox_1"
-          name="checkbox_1_lbl"
+          for="checkbox_0"
+          name="checkbox_0_lbl"
           class="css-label lite-green-check"
         ></label>
         <div class="list_box">
@@ -35,56 +35,9 @@
         </div>
         <div class="button_container">
           <button id="new_element_btn" onclick="addListElement()"><i class="fa-solid fa-plus"></i></button>
-          <button id="delete_element_btn" onclick="deleteListElement()"><i class="fa-solid fa-minus"></i></button>
         </div>
-      </li>
-    </ul>
-    <script>
-      let elementID = 0;
-
-      function createNewListElement() {
-        // Create element
-        elementID++;
-        let newListElement = document.createElement("LI");
-        newListElement.classList.add("list_element")
-        newListElement.setAttribute(`id`,`element_${elementID}`);
-        // Set the innerHTML of the element
-        newListElement.innerHTML = `
-        <input
-        id="checkbox_${elementID}"
-        class="css-checkbox"
-        type="checkbox"
-        name="entry_${elementID}"
-        />
-        <label
-        for="checkbox_${elementID}"
-        name="checkbox_${elementID}_lbl"
-        class="css-label lite-green-check"
-        ></label>
-        <div class="list_box">
-          <input class="user_entry" type="text"></input>
-        </div>
-        <div class="button_container">
-          <button id="new_element_btn" onclick="addListElement()"><i class="fa-solid fa-plus"></i></button>
-          <button id="delete_element_btn" onclick="deleteListElement(${elementID})"><i class="fa-solid fa-minus"></i></button>
-        </div>`;
-          return newListElement;
-        }
-        
-        function addListElement() {
-          let newListElement = createNewListElement();
-          document.getElementById("list_section").appendChild(newListElement);
-          // document.getElementById("list_section").innerHTML += listElements[elementID - 1].innerHTML;
-        }
-        
-        function deleteListElement(id) {
-          if(true) {
-            let removeListElement = document.getElementById(`element_${id}`);
-            removeListElement.remove();
-            // document.getElementById("list_section").removeChild(removeListElement);
-          }
-        }
-      
-      </script>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
