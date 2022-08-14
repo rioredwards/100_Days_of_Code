@@ -1,0 +1,104 @@
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  --text-light-one: #dfdfdf;
+  --text-light-two: #b7b7b7;
+  --text-dark-one: #161616;
+  --bg-dark: #343434;
+  --bg-light: #ffffff;
+  --trim-one: #f84f39;
+  --trim-two: #6b66da;
+}
+
+body {
+  color: var(--text-light-one);
+  background-color: var(--bg-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  height: 3rem;
+  margin: 0;
+  padding: 0 1rem;
+  background-color: var(--bg-light);
+}
+
+.navbar-nav {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-item {
+  color: var(--text-dark-one);
+}
+
+.nav-search-box {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.search-box-container {
+  border: 1px solid var();
+  padding: 2px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fa-magnifying-glass {
+  color: var(--text-dark-one);
+}
+
+.search-box-input {
+  height: 24px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(235, 235, 235);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background-color: rgb(219, 219, 219);
+}
+
+.icon-text {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.logo .icon-text {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 32px;
+}
+
+.nav-item i {
+  font-size: 18px;
+}
+
+.logo i {
+  font-size: 26px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-dark-one);
+}
+
+main {
+  margin: 0 4rem;
+  padding: 1rem;
+}
