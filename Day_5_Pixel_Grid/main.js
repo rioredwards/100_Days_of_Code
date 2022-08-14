@@ -23,13 +23,13 @@ buildGrid()
 
 function buildGrid() {
   for (let i = 0; i < 81; i++) {
-    let pixel = `<div id="pixel-${i}" class="pixel" style="background-color: black;"></div>`;
+    let pixel = `<div id="pixel-${i}" class="pixel" style="background-color: black; box-shadow: none;"></div>`;
     grid.innerHTML += pixel;
   };
 };
 
 // Get the parent DIV, add click listener...
-grid.addEventListener("click", function (pixel) {
+grid.addEventListener("mousedown", function (pixel) {
   // pixel.target was the clicked element
   if (pixel.target && pixel.target.matches("div.pixel")) {
     const pixelColorCurr = pixel.target.style.backgroundColor;
@@ -43,3 +43,20 @@ grid.addEventListener("click", function (pixel) {
     }
   }
 });
+
+grid.addEventListener("mouseover", function (pixel) {
+  // pixel.target was the clicked element
+  if (pixel.target && pixel.target.matches("div.pixel")) {
+    const boxShadow = `0 0 6px 2px rgba(255, 255, 255, .2) inset`;
+    pixel.target.style.boxShadow = boxShadow;
+  }
+});
+
+grid.addEventListener("mouseout", function (pixel) {
+  // pixel.target was the clicked element
+  if (pixel.target && pixel.target.matches("div.pixel")) {
+    pixel.target.style.boxShadow = "none";
+  }
+});
+
+// background-color: aqua;
