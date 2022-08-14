@@ -1,0 +1,77 @@
+:root {
+  font-family: "Comfortaa", Tahoma, sans-serif;
+  font-size: 16px;
+  --font-color-dark-one: rgb(30, 30, 30);
+  --font-color-dark-two: rgb(63, 63, 63);
+  --font-color-light-one: rgb(240, 240, 240);
+  --font-color-light-two: rgb(220, 220, 220);
+  --bg-color-light-one: rgb(210, 210, 210);
+  --bg-color-dark-one: rgb(38, 38, 38);
+  --bg-color-dark-two: rgb(80, 80, 80);
+  --transition-speed-one: 200ms;
+  --transition-speed-two: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color-dark-one);
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color-dark-one);
+}
+
+.header {
+  position: fixed;
+}
+
+.navbar {
+  margin-top: 0;
+  padding-top: 0;
+  background-color: var(--bg-color-light-one);
+  width: 100vw;
+  height: 2rem;
+}
+
+.navbar-container {
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  margin-right: 0.5rem;
+  flex: none;
+}
+
+.nav-item.logo {
+  margin-right: auto;
+  margin-left: 0.5rem;
+}
+
+.nav-item.logo .icon-text {
+  margin-left: 0.2rem;
+  font-weight: 900;
+}
+
+.navbar-bottom {
+  position: relative;
+  height: 0.1rem;
+  background-color: var(--bg-color-light-one);
+  filter: brightness(0.5);
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.248);
+}
