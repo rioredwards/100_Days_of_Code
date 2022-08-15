@@ -137,8 +137,60 @@ input[type="text"]:focus {
   justify-content: center;
   align-items: stretch;
   align-content: center;
+  filter: blur(1px);
 }
 
 .pixel-container:hover {
   background-color: rgb(188, 247, 255);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 36rem;
+}
+
+.color-picker-container {
+  height: 4rem;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.color-picker-container p {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.color-picker-container input {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 4rem;
+}
+
+#clearBtn {
+  font-weight: 800;
+  margin-right: 4rem;
+  -webkit-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  background-color: var(--bg-color-light-one);
+  color: var(--font-color-dark-two);
+  font-size: 16px;
+  padding: 6px 20px 6px 20px;
+  text-decoration: none;
+}
+
+#clearBtn:hover {
+  filter: brightness(0.8);
+  text-decoration: none;
 }
