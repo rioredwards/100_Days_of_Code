@@ -178,9 +178,6 @@ void PrintToFile(std::ofstream &outFile, std::string &charsInFront, char &charsI
   // Remove Char in front (skip charBuffer)
   else if (charsInFrontIndicator == 'r')
   {
-    MoveFilePos(outFile, -(charsInFront.length()));
-    outFile << charBuffer;
-    outFile.flush();
     if (charsInFront.length() == 0)
     {
       charsInFrontIndicator = 'n';
@@ -206,3 +203,4 @@ void PrintToFile(std::ofstream &outFile, std::string &charsInFront, char &charsI
 }
 
 // hello my {jgggg{hhh{h}}}
+// okay {lehj}
