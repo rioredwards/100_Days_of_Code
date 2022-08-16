@@ -1,4 +1,4 @@
-hello {hi{this} is} a test
+hello {{{}} this is a {test}}
 
 
-START this {is} a file with some 
+START this {

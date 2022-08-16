@@ -12,7 +12,8 @@ int main(int argc, char **argv, char **envp)
   char charBuffer = '0';
   char lastChar = '\n';
   std::string charsInFront;
-  char charsInFrontIndicator = 'n'; // n = no, y = yes, a = add, r = remove
+  char charsInFrontFlag = 'n'; // n = no, y = yes, a = add, r = remove
+  int stepBackNum = 0;
   srand(time(0));
 
   // Setup Input Stream
@@ -64,18 +65,43 @@ int main(int argc, char **argv, char **envp)
     input->get(charBuffer);
     SleepRandom(lastChar);
 
-    // Formatting
+    // Check -> MoveBack
+    if (stepBackNum > 0)
+    {
+      MoveFilePos(outFile, -(stepBackNum));
+    }
+
+    // Write charBuffer
+    outFile << charBuffer;
+    outFile.flush();
+
+    // Check -> add charsInFront
+    if (charsInFront.length() > 0)
+    {
+      outFile << charsInFront;
+      outFile.flush();
+    }
+    if (charsInFrontFlag == 'a')
+    {
+      stepBackNum++;
+      charsInFrontFlag = 'y';
+    }
+    if (charsInFrontFlag == 'r')
+    {
+      stepBackNum--;
+      charsInFrontFlag = 'y';
+    }
+
     if (charBuffer == '{')
     {
       charsInFront.append("}");
-      charsInFrontIndicator = 'a';
+      charsInFrontFlag = 'a';
     }
     if (charBuffer == '}')
     {
       charsInFront.pop_back();
-      charsInFrontIndicator = 'r';
+      charsInFrontFlag = 'r';
     }
-    PrintToFile(outFile, charsInFront, charsInFrontIndicator, charBuffer);
     lastChar = charBuffer;
   }
 
@@ -154,53 +180,28 @@ void MoveFilePos(std::ofstream &outFile, int value)
   outFile.seekp(pos + value);
 }
 
-void PrintToFile(std::ofstream &outFile, std::string &charsInFront, char &charsInFrontIndicator, char charBuffer)
-{
-  // No Chars in front (print buffer)
-  if (charsInFrontIndicator == 'n')
-  {
-    outFile << charBuffer;
-    outFile.flush();
-  }
-  // Add Char in front (print buffer)
-  else if (charsInFrontIndicator == 'a')
-  {
-    if (charsInFront.length() > 1)
-    {
-      MoveFilePos(outFile, -(charsInFront.length()));
-    }
-    outFile << charBuffer;
-    outFile.flush();
-    outFile << charsInFront;
-    outFile.flush();
-    charsInFrontIndicator = 'y';
-  }
-  // Remove Char in front (skip charBuffer)
-  else if (charsInFrontIndicator == 'r')
-  {
-    if (charsInFront.length() == 0)
-    {
-      charsInFrontIndicator = 'n';
-    }
-    else if (charsInFront.length() > 0)
-    {
-      charsInFrontIndicator = 'y';
-    }
-  }
-  // Yes, chars in front (move back, place buffer)
-  else if (charsInFrontIndicator == 'y')
-  {
-    MoveFilePos(outFile, -(charsInFront.length()));
-    outFile << charBuffer;
-    outFile.flush();
-    outFile << charsInFront;
-    outFile.flush();
-  }
-  else
-  {
-    outFile << "This is an ERROR";
-  }
-}
-
 // hello my {jgggg{hhh{h}}}
-// okay {lehj}
+// okay hello {{{{}}}
+// }}}}
+
+// // Remove Char in front (skip charBuffer)
+//   else if (charsInFrontFlag == 'r')
+//   {
+//     if (charsInFront.length() == 0)
+//     {
+//       charsInFrontFlag = 'n';
+//     }
+//     else if (charsInFront.length() > 0)
+//     {
+//       charsInFrontFlag = 'y';
+//     }
+//   }
+//   // Yes, chars in front (move back, place buffer)
+//   else if (charsInFrontFlag == 'y')
+//   {
+//     MoveFilePos(outFile, -(charsInFront.length()));
+//     outFile << charBuffer;
+//     outFile.flush();
+//     outFile << charsInFront;
+//     outFile.flush();
+//   }

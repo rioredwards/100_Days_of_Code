@@ -76,7 +76,8 @@
   ],
   "files.autoSaveDelay": 100,
   "files.autoSave": "afterDelay",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.autoClosingBrackets": "never"
 } // {
 //   "window.zoomLevel": 1,
 //   "editor.fontSize": 32,

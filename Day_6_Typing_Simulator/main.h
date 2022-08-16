@@ -9,4 +9,3 @@ int main(int, char **, char **);
 std::istream &SetUpIstream(int, char **, std::ifstream &, bool &);
 void SleepRandom(char);
 void MoveFilePos(std::ofstream &, int);
-void PrintToFile(std::ofstream &, std::string &, char &, char);

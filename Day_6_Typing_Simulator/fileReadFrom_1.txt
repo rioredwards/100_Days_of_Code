@@ -1,6 +1,6 @@
-hello {hi {this} is} a test
+hello {{{}} this is a {test}}
 
 
-START this {is} a file with some words.
+START this {is a file with some words.
 these words are on another line.
 this is the END!!!!
