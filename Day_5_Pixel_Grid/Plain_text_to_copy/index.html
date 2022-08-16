@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/2072f7b46a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital@0;1&family=Comfortaa:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pixel Grid</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <ul class="navbar-container">
+        <li class="nav-item logo">
+          <a href="#"
+            ><i class="fa-brands fa-pix"></i><span class="link-text icon-text">PixelDraw</span>
+          </a>
+        </li>
+        <li class="nav-item nav-search-box">
+          <div class="search-box-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              class="search-box-input"
+              type="text"
+              placeholder="search"
+            />
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#"
+            ><i class="fa-solid fa-cat"></i>
+            <span class="link-text icon-text">Link</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#"
+            ><i class="fa-solid fa-cow"></i></i>
+            <span class="link-text icon-text">Link</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#"
+            ><i class="fa-solid fa-crow"></i>
+            <span class="link-text icon-text">Link</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="navbar-bottom"></div>
+  </header>
+    <main>
+      <div class="main-container"> 
+        <div class="toolbar">
+          <div class="color-picker-container">
+            <p>Pick a color: </p>
+            <input type="color" id="colorPicker" name="color-picker" value="#e66465">
+          </div>
+          <button id="clearBtn">Clear</button>
+        </div>
+        <div class="toolbar-bottom"></div>
+        <div id="pixel-container" class="pixel-container">
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

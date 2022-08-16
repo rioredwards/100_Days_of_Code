@@ -1,0 +1,9 @@
+:root {
+  font-family: "Comfortaa", Tahoma, sans-serif;
+  font-size: 16px;
+  --font-color-dark-one: rgb(30, 30, 30);
+  --font-color-dark-two: rgb(63, 63, 63);
+  --font-color-light-one: rgb(240, 240, 240);
+  --font-color-light-two: rgb(220, 220, 220);
+  --bg-color-light-one: rgb(210, 210, 210);
+  --bg-color-dark-one: rgb(3

@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/Users/rioedwards/Documents/Coding/100_Days_of_Code/Day_6_Typing_Simulator/main",
+      "args": ["fileReadFrom_1.txt", "fileWriteTo_1.txt", "js"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb"
+    }
+  ],
+  "version": "2.0.0"
+}
