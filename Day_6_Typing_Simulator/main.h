@@ -7,5 +7,5 @@
 
 int main(int, char **, char **);
 std::istream &SetUpIstream(int, char **, std::ifstream &, bool &);
-void SleepRandom(char);
+void SleepRandom(char, int);
 void MoveFilePos(std::ofstream &, int);

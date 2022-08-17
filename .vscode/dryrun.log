@@ -1,5 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/rioedwards/Documents/Coding/100_Days_of_Code'
+ 
 make: Leaving directory `/Users/rioedwards/Documents/Coding/100_Days_of_Code'
  
 make: *** No targets specified and no makefile found.  Stop.
