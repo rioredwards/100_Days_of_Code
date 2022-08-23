@@ -10,17 +10,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Aug 16 17:33:26 2022
+# Make data base, printed on Mon Aug 22 15:24:12 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -42,7 +39,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_CWD = /Users/rioedwards/Documents/Coding/100_Days_of_Code/Day_5_Pixel_Grid
+VSCODE_CWD = /
 # environment
 PATH = /Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 # environment
@@ -70,9 +67,7 @@ HOME = /Users/rioedwards
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
-VSCODE_CODE_CACHE_PATH = /Users/rioedwards/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/rioedwards/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = rioedwards
 # environment
@@ -88,22 +83,17 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
+SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = rioedwards
 # makefile
 .DEFAULT_GOAL := 
-# environment
-TERM_SESSION_ID = 84CE5083-58F7-490D-B07D-60CB8A16E37E
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
- 
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = Apple_Terminal
 # default
 .VARIABLES := 
 # environment
@@ -111,7 +101,7 @@ TMPDIR = /var/folders/y2/df7q2hj11wbg6ygt7sr89wcw0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/rioedwards/Library/Application Support/Code/1.70.1-main.sock
+VSCODE_IPC_HOOK = /Users/rioedwards/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -121,9 +111,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 445
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.7622130.7622136.729FD6FD-E032-44E9-AF2F-5B1A44E19D76
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.8301503.8301509
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -155,11 +143,9 @@ CLICOLOR = 1
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 11970
+VSCODE_PID = 26443
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=1/92=1%
+# Load=65/1024=6%, Rehash=0, Collisions=1/86=1%
 
 # Pattern-specific Variable Values
 
@@ -167,9 +153,9 @@ VSCODE_PID = 11970
 
 # Directories
 
-# . (device 16777231, inode 7176489): 13 files, no impossibilities.
+# . (device 16777231, inode 7176489): 16 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -207,7 +193,6 @@ makefile:
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
- 
 #  File has been updated.
 #  Failed to be updated.
 # variable set hash-table stats:
@@ -242,6 +227,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue Aug 16 17:33:26 2022
+# Finished Make data base on Mon Aug 22 15:24:12 2022
 
  

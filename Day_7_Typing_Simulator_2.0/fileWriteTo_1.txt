@@ -1,0 +1,7 @@
+hello {{{}} this is a {test}}
+
+
+START this {is a file with some words.
+these words are on another line.
+this is the END!!!!
+}
