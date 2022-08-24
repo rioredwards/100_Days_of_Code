@@ -4,12 +4,12 @@
       "name": "(lldb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "/Users/rioedwards/Documents/Coding/100_Days_of_Code/Day_6_Typing_Simulator/main",
-      "args": ["fileReadFrom_1.txt", "fileWriteTo_1.txt", "js"],
+      "program": "/Users/rioedwards/Documents/Coding/100_Days_of_Code/Day_7_Typing_Simulator_2.0/main",
+      "args": ["fileReadFrom_1.txt", "fileWriteTo_1.txt", "cpp", "1"],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
-      "externalConsole": true,
+      "externalConsole": false,
       "MIMode": "lldb"
     }
   ],

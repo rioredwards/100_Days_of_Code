@@ -29,7 +29,7 @@ int main(int argc, char **argv, char **envp)
   // Setup Output Stream
   if (argc > 2)
   {
-    outFile.open(argv[2]);
+    outFile.open(argv[2], std::ios_base::app);
     if (outFile.good() != true)
     {
       std::cout << "Unable to open \"" << argv[2] << "\"" << std::endl;

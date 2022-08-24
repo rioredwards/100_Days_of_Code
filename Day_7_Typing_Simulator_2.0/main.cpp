@@ -12,14 +12,15 @@ int main(int argc, char **argv, char **envp)
   char charBuffer = '0';
   char lastChar = '\n';
   std::string charsInFront;
+  std::string randUsrInput;
   char charsInFrontFlag = 'n'; // n = no, y = yes, a = add, r = remove
   int stepBackNum = 0;
   int SleepTime = 100000;
   srand(time(0));
 
   std::cout << "\n~RUNNING~\n";
-  // Setup Input Stream
 
+  // Setup Input Stream
   input = &SetUpIstream(argc, argv, inFile, istreamGood);
   if (istreamGood != true)
   {
@@ -76,7 +77,14 @@ int main(int argc, char **argv, char **envp)
   while (input->good() == true && input->peek() != EOF)
   {
     input->get(charBuffer);
+
     SleepRandom(lastChar, SleepTime);
+
+    if (charBuffer == '\n')
+    {
+      // std::cin >> randUsrInput;
+      system("read");
+    }
 
     // Check -> MoveBack
     if (stepBackNum > 0)
@@ -213,4 +221,12 @@ void MoveFilePos(std::ofstream &outFile, int value)
 {
   long pos = outFile.tellp();
   outFile.seekp(pos + value);
+}
+
+void BackSpace(std::ofstream &outFile, int stepBackNum)
+{
+  for (int i = 0; i < stepBackNum; i++)
+  {
+    outFile << "\b \b";
+  }
 }
