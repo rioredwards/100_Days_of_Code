@@ -1,6 +1,7 @@
 import Ball from "./Ball.js"
 import Paddle from "./paddle.js"
 import Ground from "./Ground.js"
+const GRAVITY = 0.01;
 
 const ball = new Ball(document.getElementById("ball"));
 const playerPaddle = new Paddle(document.getElementById("player-paddle"));
@@ -12,8 +13,8 @@ let keyPressed = '';
 function update(time) {
   if (lastTime != null) {
     const delta = time - lastTime;
-    ball.update(delta, playerPaddle.rect(), ground.rect());
-    playerPaddle.update(delta, keyPressed, ground.rect());
+    // ball.update(delta, playerPaddle.rect(), ground.rect());
+    playerPaddle.update(delta, keyPressed, ground.rect(), GRAVITY);
   }
   lastTime = time;
   window.requestAnimationFrame(update);
@@ -21,7 +22,7 @@ function update(time) {
 
 /* Call function on specific key press */
 document.addEventListener('keydown', e => {
-  if (keyPressed.length < 2 && !keyPressed.includes(e.key)) {
+  if (keyPressed.length < 3 && !keyPressed.includes(e.key)) {
     if (e.key === 'd') {
       keyPressed += 'd';
     }
@@ -33,6 +34,9 @@ document.addEventListener('keydown', e => {
     }
     if (e.key === 'w') {
       keyPressed += 'w';
+    }
+    if (e.key === ' ') {
+      keyPressed += ' ';
     }
     console.log('Adding Key', e.key, keyPressed);
   }
@@ -51,14 +55,10 @@ document.addEventListener('keyup', e => {
   if (e.key === 'w') {
     keyPressed = keyPressed.replace('w', '');
   }
+  if (e.key === ' ') {
+    keyPressed = keyPressed.replace(' ', '');
+  }
   console.log('Removing Key', e.key, keyPressed);
 });
-
-// document.addEventListener("mousemove", e => {
-//   if (playerPaddle.rect().bottom >= ground.rect().top) {
-//     playerPaddle.position = e.y / window.innerHeight * 100;
-//   }
-// })
-
 
 window.requestAnimationFrame(update);

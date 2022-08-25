@@ -1,4 +1,7 @@
-const SPEED = .02;
+const INITIAL_DIRECTION = { x: 0, y: 0 };
+const JUMP_DURATION = 20;
+const xVelocity = 0.05;
+let yVelocity = 0.08;
 
 export default class Paddle {
   constructor(paddleElem) {
@@ -26,30 +29,76 @@ export default class Paddle {
     return this.paddleElem.getBoundingClientRect();
   }
 
+  setDirection(keyPressed) {
+    if (!keyPressed) {
+      this.direction.x = 0;
+    }
+
+    if (keyPressed.includes('d')) {
+      this.direction.x = 1;
+    }
+
+    if (keyPressed.includes('a')) {
+      this.direction.x = -1;
+    }
+
+    if (keyPressed.includes('w') && this.grounded) {
+      this.jumpState = true;
+    }
+  }
+
   reset() {
     this.x = 50;
     this.y = 50;
+    this.direction = INITIAL_DIRECTION;
+    this.grounded = false;
   }
 
   update(delta, keyPressed, groundRect) {
     const paddleRect = this.rect();
 
-    if (keyPressed.includes('d')) {
-      this.x += SPEED * delta;
+    this.setDirection(keyPressed);
+    this.x += this.direction.x * xVelocity * delta;
+    this.y += this.direction.y * yVelocity * delta;
+
+    /* Gravity */
+    if (paddleRect.bottom < groundRect.top) {
+      console.log(paddleRect.bottom, groundRect.top);
+      this.grounded = false;
+      if (this.direction.y != 1)
+        this.direction.y += .04;
     }
 
-    if (keyPressed.includes('a')) {
-      this.x -= SPEED * delta;
+    /* Grounded */
+    if (paddleRect.bottom > groundRect.top && !this.jumpState) {
+      this.direction.y = 0;
+      this.velocity = 0;
+      this.grounded = true;
+      this.y = 60;
     }
 
-    if (keyPressed.includes('w')) {
-      this.y -= SPEED * delta;
-    }
-
-    if (keyPressed.includes('s')) {
-      if (paddleRect.bottom <= groundRect.top) {
-        this.y += SPEED * delta;
+    /* Jumping */
+    if (this.jumpState) {
+      // Initial Jump Frame
+      if (this.grounded) {
+        this.direction.y = -1;
+        this.grounded = false;
+        this.jumpTime = JUMP_DURATION;
       }
+      // Decrementing jumpTime
+      this.jumpTime -= 1;
+      if (this.jumpTime <= 0) {
+        this.jumpTime = 0;
+        this.jumpState = false;
+      }
+      console.log("Jumping! Direction.y: " + this.direction.y);
+    }
+
+    /* Wall */
+    if (paddleRect.left >= window.innerWidth) {
+      this.x = 1;
+    } else if (paddleRect.left <= 0) {
+      this.x = 99;
     }
   }
 }
