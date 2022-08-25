@@ -39,17 +39,21 @@ export default class Ball {
     console.log(this.direction);
   }
 
-  update(delta, paddleRects) {
+  update(delta, paddleRect, groundRect) {
     this.x += this.direction.x * this.velocity * delta;
     this.y += this.direction.y * this.velocity * delta;
     this.velocity += VELOCITY_INCREASE * delta;
-    const rect = this.rect();
+    const ballRect = this.rect();
 
-    if (rect.bottom >= window.innerHeight || rect.top <= 0) {
+    if (ballRect.bottom >= window.innerHeight || ballRect.top <= 0) {
       this.direction.y *= -1;
     }
 
-    if (paddleRects.some(r => isCollision(r, rect))) {
+    if (ballRect.bottom >= groundRect.top) {
+      this.direction.y *= -1;
+    }
+
+    if (isCollision(ballRect, paddleRect, groundRect)) {
       this.direction.x *= -1;
     }
   }
@@ -59,6 +63,8 @@ function randomNumberBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function isCollision(rect1, rect2) {
-  return (rect1.left <= rect2.right && rect1.right >= rect2.left && rect1.top <= rect2.bottom && rect1.bottom >= rect2.top);
+function isCollision(ballRect, paddleRect, groundRect) {
+  return (ballRect.left <= paddleRect.right
+    && ballRect.top <= paddleRect.bottom
+    && ballRect.bottom >= paddleRect.top);
 }
