@@ -13,7 +13,7 @@ let keyPressed = '';
 function update(time) {
   if (lastTime != null) {
     const delta = time - lastTime;
-    // ball.update(delta, playerPaddle.rect(), ground.rect());
+    ball.update(delta, playerPaddle.rect(), ground.rect());
     playerPaddle.update(delta, keyPressed, ground.rect(), GRAVITY);
   }
   lastTime = time;

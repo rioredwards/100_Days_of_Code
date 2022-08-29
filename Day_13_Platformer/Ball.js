@@ -1,5 +1,4 @@
 const INITIAL_VELOCITY = .03;
-const VELOCITY_INCREASE = .000001;
 
 export default class Ball {
   constructor(ballElem) {
@@ -29,7 +28,7 @@ export default class Ball {
 
   reset() {
     this.x = 50;
-    this.y = 50;
+    this.y = 20;
     this.direction = { x: 0 };
     while (Math.abs(this.direction.x) <= .2 || Math.abs(this.direction.x) >= .9) {
       const heading = randomNumberBetween(0, 2 * Math.PI);
@@ -42,20 +41,27 @@ export default class Ball {
   update(delta, paddleRect, groundRect) {
     this.x += this.direction.x * this.velocity * delta;
     this.y += this.direction.y * this.velocity * delta;
-    this.velocity += VELOCITY_INCREASE * delta;
     const ballRect = this.rect();
 
-    if (ballRect.bottom >= window.innerHeight || ballRect.top <= 0) {
-      this.direction.y *= -1;
-    }
+    this.direction.y += .08;
+    this.direction.x *= .999;
 
+    /* Grounded */
     if (ballRect.bottom >= groundRect.top) {
-      this.direction.y *= -1;
+      this.direction.y *= -0.9;
+      this.velocity *= .90;
     }
 
-    if (isCollision(ballRect, paddleRect, groundRect)) {
-      this.direction.x *= -1;
+    /* Wall */
+    if (ballRect.left >= window.innerWidth) {
+      this.x = 0;
+    } else if (ballRect.right <= 0) {
+      this.x = 100;
     }
+
+    // if (paddleCollision(ballRect, paddleRect)) {
+    //   this.direction.x *= -0.9;
+    // }
   }
 }
 
@@ -63,8 +69,9 @@ function randomNumberBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function isCollision(ballRect, paddleRect, groundRect) {
-  return (ballRect.left <= paddleRect.right
-    && ballRect.top <= paddleRect.bottom
-    && ballRect.bottom >= paddleRect.top);
+function paddleCollision(ballRect, paddleRect) {
+  return (ballRect.left <= paddleRect.right)
+    // && ballRect.top <= paddleRect.bottom
+    // && ballRect.bottom >= paddleRect.top)
+    ;
 }
